@@ -1,0 +1,22 @@
+#adding_line_btn{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#stop{
+    position: absolute;
+    top: 0;
+    left: 5rem;
+}
+#lenght{
+    position: absolute;
+    top: 0;
+    left: 5rem;
+
+}
+#canvas{
+    border: 1px solid black;
+}
+.draw_area{
+    background-image: url(12.jpg);
+}
