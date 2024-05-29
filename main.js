@@ -33,6 +33,8 @@ var polyLine = new fabric.Polyline(points, {
   hasBorders: false,
   evented: true,
   targetFindTolerance: true,
+  originX: "right",
+  originY: "top",
 });
 
 //add polyline to canvas
@@ -105,6 +107,47 @@ function startAddingLine_VH(o) {
       polyLine.dirty = true;
       canvas.add(polyLine);
       canvas.renderAll();
+      /////----------create dimention for  Horizontal line-----------------------------------------------------------------------------------
+
+      var center_point_x;
+      var center_point_y;
+      if (newPoint_x > perv_Point_x) {
+        center_point_x =
+          Math.abs((newPoint_x - perv_Point_x) / 2) + perv_Point_x;
+        center_point_y = newPoint_y;
+        let p_lenght = document.createElement("p");
+        p_lenght.setAttribute(
+          "style",
+          "position:absolute; left:" +
+            center_point_x +
+            "px; top:" +
+            center_point_y +
+            "px"
+        );
+        document.body.appendChild(p_lenght);
+        p_lenght.textContent = document.getElementById("lenght").innerText =
+          Math.round(Math.abs((newPoint_x - perv_Point_x) * 0.0264583333)) +
+          "cm";
+        console.log(p_lenght);
+      } else {
+        center_point_x = Math.abs((newPoint_x - perv_Point_x) / 2) + newPoint_x;
+        center_point_y = newPoint_y;
+        let p_lenght = document.createElement("p");
+        p_lenght.setAttribute(
+          "style",
+          "position:absolute; left:" +
+            center_point_x +
+            "px; top:" +
+            center_point_y +
+            "px"
+        );
+        document.body.appendChild(p_lenght);
+        p_lenght.textContent = document.getElementById("lenght").innerText =
+          Math.round(Math.abs((newPoint_x - perv_Point_x) * 0.0264583333)) +
+          "cm";
+        console.log(p_lenght);
+      }
+      /////----------End create dimention for  Horizontal line-----------------------------------------------------------------------------------
     }
 
     /////----------create a line vertical-----------------------------------------------------------------------------------
@@ -116,15 +159,56 @@ function startAddingLine_VH(o) {
       polyLine.dirty = true;
       canvas.add(polyLine);
       canvas.renderAll();
+
+      /////----------create dimention for  Vertical line-----------------------------------------------------------------------------------
+
+      var center_point_x;
+      var center_point_y;
+      if (newPoint_y > perv_Point_y) {
+        center_point_y =
+          Math.abs((newPoint_y - perv_Point_y) / 2) + perv_Point_y;
+        center_point_x = newPoint_x;
+        let p_lenght = document.createElement("p");
+        p_lenght.setAttribute(
+          "style",
+          "position:absolute; left:" +
+            center_point_x +
+            "px; top:" +
+            center_point_y +
+            "px"
+        );
+        document.body.appendChild(p_lenght);
+        p_lenght.textContent = document.getElementById("lenght").innerText =
+          Math.round(Math.abs((newPoint_y - perv_Point_y) * 0.0264583333)) +
+          "cm";
+        console.log(p_lenght);
+      } else {
+        center_point_y = Math.abs((newPoint_y - perv_Point_y) / 2) + newPoint_y;
+        center_point_x = newPoint_x;
+        let p_lenght = document.createElement("p");
+        p_lenght.setAttribute(
+          "style",
+          "position:absolute; left:" +
+            center_point_x +
+            "px; top:" +
+            center_point_y +
+            "px"
+        );
+        document.body.appendChild(p_lenght);
+        p_lenght.textContent = document.getElementById("lenght").innerText =
+          Math.round(Math.abs((newPoint_y - perv_Point_y) * 0.0264583333)) +
+          "cm";
+        console.log(p_lenght);
+      }
+      /////----------End create dimention for  Horizontal line-----------------------------------------------------------------------------------
     }
     perv_Point_x = canvas.getPointer(o.e).x;
     perv_Point_y = canvas.getPointer(o.e).y;
     count += 1;
   }
-      /////----------End vertical/horizontal line-----------------------------------------------------------------------------------
-
-  
-  else {  //avalin click
+  /////----------End vertical/horizontal line-----------------------------------------------------------------------------------
+  else {
+    //avalin click
 
     polyLine.points.push(new fabric.Point(pointer.x, pointer.y));
     setPolyCoordsVH();
