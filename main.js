@@ -4,10 +4,10 @@ var canvas = new fabric.Canvas("canvas", {
 });
 
 //define button
-let adding_line_btn = document.getElementById("adding_line_btn");
-let adding_VH_line_btn = document.getElementById("adding_VH_line_btn");
-let stop_btn = document.getElementById("stop");
-let clear_btn = document.getElementById("clear");
+var adding_line_btn = document.getElementById("adding_line_btn");
+var adding_VH_line_btn = document.getElementById("adding_VH_line_btn");
+var stop_btn = document.getElementById("stop");
+var clear_btn = document.getElementById("clear");
 var active_btn = false;
 //end of define button
 
@@ -44,6 +44,13 @@ canvas.renderAll();
 
 function activateAddingLine_VH() {
   canvas.on("mouse:down", startAddingLine_VH); //function for create VH line
+  //active adding_VH_line_btn 
+  active_btn = true
+  adding_VH_line_btn.classList.add('active')
+  adding_VH_line_btn.setAttribute("disabled", true);
+  //disable adding_line_btn
+  adding_line_btn.setAttribute("disabled", true);
+
 }
 function activateAddingLine() {
   canvas.on("mouse:down", startAddingLine); //function for create free line
@@ -59,8 +66,7 @@ var y_vertical;
 var isHorizontal;
 
 function startAddingLine_VH(o) {
-  // active_btn = true
-  // adding_VH_line_btn.classList.add('active')
+  
   let pointer = canvas.getPointer(o.e);
   var newPoint_x = pointer.x;
   var newPoint_y = pointer.y;
@@ -312,4 +318,9 @@ function clear_canvas() {
     width: window.innerWidth,
     height: window.innerHeight,
   });
+
+  adding_VH_line_btn.setAttribute("disabled", false);
+  adding_line_btn.setAttribute("disabled", false);
+
+  
 }

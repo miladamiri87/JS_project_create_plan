@@ -6,6 +6,10 @@
 .active{
     color: white;
     background-color: green;
+    
+}
+.hidden{
+    display: none;
 }
 
 #adding_VH_line_btn {
