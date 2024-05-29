@@ -1,22 +1,39 @@
-#adding_line_btn{
+#adding_line_btn {
     position: absolute;
     top: 0;
     left: 0;
 }
-#stop{
+
+#adding_VH_line_btn {
     position: absolute;
     top: 0;
     left: 5rem;
 }
-#lenght{
+
+
+#stop {
+    position: absolute;
+    top: 0;
+    left: 12rem;
+}
+
+#clear {
+    position: absolute;
+    top: 0;
+    left: 17rem;
+}
+
+#lenght {
     position: absolute;
     top: 0;
     left: 5rem;
 
 }
-#canvas{
+
+#canvas {
     border: 1px solid black;
 }
-.draw_area{
+
+.draw_area {
     background-image: url(12.jpg);
 }
