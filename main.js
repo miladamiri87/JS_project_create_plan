@@ -8,6 +8,7 @@ let adding_line_btn = document.getElementById("adding_line_btn");
 let adding_VH_line_btn = document.getElementById("adding_VH_line_btn");
 let stop_btn = document.getElementById("stop");
 let clear_btn = document.getElementById("clear");
+var active_btn = false;
 //end of define button
 
 //define function for each btn
@@ -33,8 +34,6 @@ var polyLine = new fabric.Polyline(points, {
   hasBorders: false,
   evented: true,
   targetFindTolerance: true,
-  originX: "right",
-  originY: "top",
 });
 
 //add polyline to canvas
@@ -60,6 +59,8 @@ var y_vertical;
 var isHorizontal;
 
 function startAddingLine_VH(o) {
+  // active_btn = true
+  // adding_VH_line_btn.classList.add('active')
   let pointer = canvas.getPointer(o.e);
   var newPoint_x = pointer.x;
   var newPoint_y = pointer.y;
