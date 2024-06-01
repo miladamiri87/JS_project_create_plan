@@ -1,28 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <!-- <script src="fabric.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.7.22/fabric.js"></script>
 
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="draw_area">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <button id="draw_btn">Draw</button>
+
+    <!-- <div class="draw_area">
         <canvas id="canvas"></canvas>
         <button id="adding_line_btn">Add Line</button>
         <button id="adding_VH_line_btn">Add V/H Line</button>
         <button id="stop">stop Line</button>
         <button id="clear">Clear</button>
+        <button id="draw_btn">Draw</button>
+
         <p id="p_lenght" class="p"></p>
         <p id="lenght"></p>
-    </div>
-    
-    
+    </div> -->
+    <div class="canvas_draw">
+      <div class="draw_area">
+        <canvas id="canvas"></canvas>
+        <button id="adding_line_btn">Add Line</button>
+        <button id="adding_VH_line_btn">Add V/H Line</button>
+        <button id="stop">stop Line</button>
+        <button id="clear">Clear</button>
+        <button id="close_btn">close</button>
 
+        <!-- <p id="p_lenght" class="p"></p> -->
+        <p id="lenght"></p>
+      </div>
+    </div>
 
     <script src="main.js"></script>
-</body>
+  </body>
 </html>

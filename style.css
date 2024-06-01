@@ -1,47 +1,78 @@
 #adding_line_btn {
-    position: absolute;
-    top: 0;
-    left: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
-.active{
-    color: white;
-    background-color: green;
-    
+
+#close_btn {
+  position: absolute;
+  top: 0;
+  left: 22rem;
 }
-.hidden{
-    display: none;
+.active {
+  color: white;
+  background-color: green;
+}
+.disactive {
+  color: white;
+  background-color: gray;
+}
+.hidden {
+  display: none;
 }
 
 #adding_VH_line_btn {
-    position: absolute;
-    top: 0;
-    left: 5rem;
+  position: absolute;
+  top: 0;
+  left: 5rem;
 }
 
-
 #stop {
-    position: absolute;
-    top: 0;
-    left: 12rem;
+  position: absolute;
+  top: 0;
+  left: 12rem;
 }
 
 #clear {
-    position: absolute;
-    top: 0;
-    left: 17rem;
+  position: absolute;
+  top: 0;
+  left: 17rem;
 }
 
 #lenght {
-    position: absolute;
-    top: 0;
-    left: 5rem;
-
+  position: absolute;
+  top: 0;
+  left: 5rem;
 }
 
 #canvas {
-    border: 1px solid black;
+  border: 1px solid black;
+  width: 100%;
+  height: 100%;
 }
 
 .draw_area {
-    background-image: url(12.jpg);
+  background-image: url(12.jpg);
+  width: 100%;
+}
+
+.p{
+  position: absolute;
+}
+
+.canvas_draw {
+  position: relative;
+  top: 15rem;
+  left: 5rem;
+  width: 730px;
+  height: 350px;
+  background-color: aqua;
+  display: none;
+  /* margin: 4rem; */
+}
+
+
+.show {
+  display: flex;
+  visibility: visible;
 }
